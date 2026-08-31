@@ -10,76 +10,87 @@
         }
         body {
             margin: 0;
-            padding: 0;
-            background-color: #d6d3cb;
+            padding: 40px 20px;
+            background-color: #d2cec5;
             font-family: 'Segoe UI', Arial, sans-serif;
-            color: #1c252c;
+            color: #2b353d;
             display: flex;
             justify-content: center;
-            align-items: center;
-            min-height: 100vh;
         }
-        /* Lienzo principal que imita la proporción y fondo del flyer */
-        .flyer-canvas {
+        .flyer {
             position: relative;
             width: 100%;
-            max-width: 800px;
+            max-width: 750px;
             background-color: #e3ded6;
-            padding: 50px 60px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-        }
-
-        /* Franja azul lateral izquierda de fondo (como en tu imagen) */
-        .flyer-canvas::before {
-            content: "";
-            position: absolute;
-            left: 0;
-            top: 280px;
-            width: 42%;
-            height: 175px;
-            background-color: #2c4d59;
-            z-index: 0;
-        }
-
-        /* Contenido general para que esté por encima de la franja */
-        .header, .content-section, .bottom-grid {
-            position: relative;
-            z-index: 1;
+            padding: 50px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.12);
         }
 
         /* Cabecera */
-        .logo-title {
-            font-size: 44px;
+        .header {
+            margin-bottom: 40px;
+        }
+        .brand-title {
+            font-size: 46px;
             font-weight: 800;
-            color: #767448; /* Tono dorado/oliva del logo superior */
+            color: #7b784a; /* Tono oliva/dorado del logotipo */
             letter-spacing: 1px;
             margin: 0 0 5px 0;
             line-height: 1;
         }
-        .main-subtitle {
-            font-size: 20px;
+        .brand-subtitle {
+            font-size: 18px;
             font-weight: 700;
             color: #1c252c;
             text-transform: uppercase;
             letter-spacing: 0.5px;
             margin: 0 0 15px 0;
         }
-        .contact-row {
-            font-size: 14px;
-            color: #2b353d;
-            margin-bottom: 5px;
+        .contact-info {
+            font-size: 13px;
+            color: #333;
+            margin-bottom: 4px;
             font-weight: 500;
         }
 
-        /* Secciones de texto */
+        /* Bloque de Servicios con fondo azul integrado */
+        .services-box {
+            background-color: #2c4d59;
+            color: #ffffff;
+            padding: 22px 25px;
+            margin: 0 -50px 35px -50px; /* Se extiende de lado a lado del flyer de forma limpia */
+        }
+        .services-box h2 {
+            font-size: 17px;
+            letter-spacing: 1px;
+            margin: 0 0 10px 0;
+            text-transform: uppercase;
+        }
+        .services-box ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .services-box li {
+            font-size: 14px;
+            margin-bottom: 6px;
+            font-weight: 500;
+            letter-spacing: 0.3px;
+        }
+        .services-box li::before {
+            content: "• ";
+            color: #ffffff;
+        }
+
+        /* Resto de secciones */
         .section-block {
-            margin-top: 35px;
+            margin-bottom: 35px;
         }
         .section-block h2 {
-            font-size: 18px;
+            font-size: 17px;
             letter-spacing: 1px;
             color: #1c252c;
-            margin: 0 0 8px 0;
+            margin: 0 0 10px 0;
             text-transform: uppercase;
         }
         .section-block ul {
@@ -88,119 +99,89 @@
             margin: 0;
         }
         .section-block li {
-            font-size: 15px;
+            font-size: 14px;
             color: #2b353d;
-            margin-bottom: 5px;
+            margin-bottom: 6px;
             font-weight: 500;
+            letter-spacing: 0.3px;
         }
         .section-block li::before {
             content: "• ";
-            color: #1c252c;
+            color: #2b353d;
             font-weight: bold;
         }
 
-        /* Zona especial para Servicios que cae sobre la franja azul */
-        .services-on-blue {
-            margin-top: 45px;
-            position: relative;
-            z-index: 1;
-        }
-        .services-on-blue h2 {
-            font-size: 18px;
-            letter-spacing: 1px;
-            color: #ffffff;
-            margin: 0 0 8px 0;
-            text-transform: uppercase;
-        }
-        .services-on-blue ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-        .services-on-blue li {
-            font-size: 15px;
-            color: #ffffff;
-            margin-bottom: 5px;
-            font-weight: 500;
-        }
-        .services-on-blue li::before {
-            content: "• ";
-            color: #ffffff;
-        }
-
-        /* Posicionamiento flotante de las fotos a la derecha (como en tu imagen) */
-        .floating-images {
-            position: absolute;
-            right: 50px;
-            top: 50px;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-end;
-            gap: 15px;
-            z-index: 2;
-        }
-        .floating-images img {
-            max-width: 200px;
-            height: auto;
-            filter: drop-shadow(0 10px 15px rgba(0,0,0,0.2));
-        }
-
-        /* Sección inferior dividida */
+        /* Grid inferior para Aplicaciones y Ventajas */
         .bottom-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            margin-top: 40px;
+            gap: 30px;
+            margin-top: 10px;
+        }
+
+        /* Imágenes flotantes a la derecha */
+        .images-container {
+            position: absolute;
+            right: 50px;
+            top: 45px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 25px;
+        }
+        .images-container img {
+            width: 170px;
+            height: auto;
+            object-fit: contain;
+            filter: drop-shadow(0 8px 12px rgba(0,0,0,0.15));
         }
 
         @media (max-width: 768px) {
-            .flyer-canvas {
+            .flyer {
                 padding: 25px;
             }
-            .floating-images {
+            .services-box {
+                margin: 0 -25px 25px -25px;
+                padding: 15px 25px;
+            }
+            .images-container {
                 position: relative;
                 right: auto;
                 top: auto;
                 flex-direction: row;
                 justify-content: center;
-                margin-top: 20px;
+                margin-bottom: 25px;
             }
-            .floating-images img {
-                max-width: 120px;
-            }
-            .flyer-canvas::before {
-                display: none; /* Simplificar en móvil si es necesario */
-            }
-            .services-on-blue h2, .services-on-blue li {
-                color: #1c252c;
+            .images-container img {
+                width: 110px;
             }
             .bottom-grid {
                 grid-template-columns: 1fr;
-                gap: 20px;
+                gap: 25px;
             }
         }
     </style>
 </head>
 <body>
 
-    <div class="flyer-canvas">
+    <div class="flyer">
         
-        <!-- Fotografías flotantes a la derecha (Exacto a tu diseño) -->
-        <div class="floating-images">
+        <!-- Fotografías a la derecha exactas -->
+        <div class="images-container">
             <img src="blanco.png" alt="Pieza impresa 3D vertical">
-            <img src="negro.png" alt="Engranaje negro industrial">
+            <img src="negro.png" alt="Engranaje industrial negro">
         </div>
 
         <!-- Cabecera -->
         <div class="header">
-            <h1 class="logo-title">MUGONZA</h1>
-            <div class="main-subtitle">Soluciones Industriales en Impresión 3D</div>
-            <div class="contact-row">📍 Concepción, Región del Biobío</div>
-            <div class="contact-row">✉️ ventas@mugonza.cl</div>
+            <h1 class="brand-title">MUGONZA</h1>
+            <div class="brand-subtitle">Soluciones Industriales en Impresión 3D</div>
+            <div class="contact-info">📍 Concepción, Región del Biobío</div>
+            <div class="contact-info">✉️ ventas@mugonza.cl</div>
         </div>
 
-        <!-- Servicios (Sobre la franja azul característica) -->
-        <div class="services-on-blue">
+        <!-- Servicios (Franja azul horizontal de borde a borde) -->
+        <div class="services-box">
             <h2>Servicios</h2>
             <ul>
                 <li>IMPRESIÓN 3D FDM</li>
@@ -220,9 +201,9 @@
             </ul>
         </div>
 
-        <!-- Sección Inferior: Aplicaciones y Ventajas -->
+        <!-- Fila Inferior: Aplicaciones y Ventajas -->
         <div class="bottom-grid">
-            <div class="section-block" style="margin-top: 0;">
+            <div class="section-block" style="margin-bottom: 0;">
                 <h2>Aplicaciones</h2>
                 <ul>
                     <li>REPUESTOS INDUSTRIALES</li>
@@ -230,7 +211,7 @@
                 </ul>
             </div>
 
-            <div class="section-block" style="margin-top: 0;">
+            <div class="section-block" style="margin-bottom: 0;">
                 <h2>Ventajas</h2>
                 <ul>
                     <li>FABRICACIÓN RÁPIDA Y PRECISA</li>
