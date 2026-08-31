@@ -3,14 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MUGONZA | Impresión 3D Industrial</title>
+    <title>MUGONZA | Impresión 3D Industrial y Fabricación Aditiva</title>
     <style>
         :root {
-            --color-verde: #8a9a5b;
-            --color-azul: #2c4d59;
+            --color-verde: #8a9a5b; /* Verde oliva del logo */
+            --color-azul: #2c4d59;  /* Azul acero del isotipo */
             --primary-color: #1a232a;
-            --bg-light: #f8f9fa;
+            --bg-light: #f4f6f8;
             --text-color: #333333;
+        }
+        * {
+            box-sizing: border-box;
         }
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -19,67 +22,97 @@
             color: var(--text-color);
             line-height: 1.6;
         }
+        /* Cabecera corporativa limpia */
         header {
-            background-color: var(--primary-color);
-            color: #ffffff;
-            padding: 1.5rem 2rem;
+            background-color: #ffffff;
+            color: var(--primary-color);
+            padding: 1rem 3rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 4px solid var(--color-verde);
+            border-bottom: 2px solid #e0e0e0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
-        .logo-container h1 {
-            margin: 0;
-            font-size: 1.8rem;
-            color: #ffffff;
+        .logo-container img {
+            height: 45px; /* Ajusta la altura de tu logo según necesites */
+            width: auto;
+            display: block;
         }
-        .logo-container h1 span {
-            color: var(--color-verde);
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 25px;
         }
         nav a {
-            color: #ffffff;
+            color: var(--primary-color);
             text-decoration: none;
-            margin-left: 25px;
             font-weight: 600;
+            font-size: 0.95rem;
+            transition: color 0.3s;
         }
         nav a:hover {
             color: var(--color-verde);
         }
+        .btn-header {
+            background-color: var(--color-azul);
+            color: #ffffff !important;
+            padding: 0.5rem 1.2rem;
+            border-radius: 4px;
+        }
+        .btn-header:hover {
+            background-color: #1f3740;
+        }
+
+        /* Sección Hero / Principal */
         .hero {
-            background: linear-gradient(rgba(26, 35, 42, 0.85), rgba(26, 35, 42, 0.85)), url('https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1200&q=80');
+            background: linear-gradient(rgba(26, 35, 42, 0.9), rgba(26, 35, 42, 0.9)), url('https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1400&q=80');
             background-size: cover;
             background-position: center;
-            text-align: center;
-            padding: 6rem 2rem;
+            text-align: left;
+            padding: 7rem 3rem;
             color: #ffffff;
         }
-        .hero h2 {
-            font-size: 2.8rem;
-            margin-bottom: 1rem;
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1.2rem;
+            line-height: 1.2;
+        }
+        .hero h1 span {
+            color: var(--color-verde);
         }
         .hero p {
-            font-size: 1.25rem;
-            max-width: 750px;
-            margin: 0 auto 2.5rem auto;
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin-bottom: 2.5rem;
             color: #d1d5db;
         }
-        .btn {
+        .btn-main {
             background-color: var(--color-verde);
             color: #ffffff;
             padding: 0.85rem 2rem;
             text-decoration: none;
             font-weight: bold;
             border-radius: 4px;
+            display: inline-block;
+            transition: background 0.3s;
         }
-        .btn:hover {
+        .btn-main:hover {
             background-color: #728148;
         }
+
+        /* Secciones de Soluciones Técnicas */
         .section {
-            padding: 5rem 2rem;
-            max-width: 1100px;
+            padding: 5rem 3rem;
+            max-width: 1200px;
             margin: 0 auto;
         }
-        .section h3 {
+        .section h2 {
             text-align: center;
             font-size: 2.2rem;
             margin-bottom: 3rem;
@@ -87,38 +120,49 @@
         }
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
         }
         .card {
             background: var(--bg-light);
-            border-left: 5px solid var(--color-azul);
-            padding: 2rem;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            border-radius: 0 6px 6px 0;
+            border-top: 4px solid var(--color-azul);
+            padding: 2.5rem;
+            border-radius: 6px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
         }
-        .card h4 {
-            color: var(--color-azul);
+        .card h3 {
+            color: var(--primary-color);
             margin-top: 0;
-            font-size: 1.3rem;
+            font-size: 1.4rem;
         }
+        .card p {
+            color: #555555;
+            font-size: 0.98rem;
+        }
+
+        /* Pie de página (Contacto) */
         footer {
             background-color: var(--primary-color);
             color: #ffffff;
-            padding: 4rem 2rem;
-            border-top: 4px solid var(--color-azul);
+            padding: 4rem 3rem;
+            border-top: 4px solid var(--color-verde);
         }
         .footer-content {
-            max-width: 1100px;
+            max-width: 1200px;
             margin: 0 auto;
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2.5rem;
+            gap: 3rem;
         }
         footer h4 {
             color: var(--color-verde);
             margin-top: 0;
             font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+        footer p {
+            color: #cbd5e1;
+            margin: 0.5rem 0;
         }
     </style>
 </head>
@@ -126,52 +170,29 @@
 
     <header>
         <div class="logo-container">
-            <h1>MUGO<span>NZA</span></h1>
+            <img src="logo.png" alt="MUGONZA Logo">
         </div>
         <nav>
-            <a href="#servicios">Soluciones</a>
-            <a href="#contacto">Contacto</a>
+            <a href="#soluciones">Soluciones</a>
+            <a href="#contacto" class="btn-header">Contacto</a>
         </nav>
     </header>
 
     <section class="hero">
-        <h2>Impresión 3D Industrial de Alto Rendimiento</h2>
-        <p>Fabricación aditiva avanzada para el sector industrial. Desarrollamos componentes complejos como aspas, cubiertas de motores y repuestos funcionales bajo demanda.</p>
-        <a href="#contacto" class="btn">Solicitar Cotización</a>
+        <div class="hero-content">
+            <h1>Fabricación Aditiva e <span>Impresión 3D Industrial</span></h1>
+            <p>Desarrollamos componentes de alta exigencia mecánica y térmica para la industria. Soluciones a medida bajo demanda para evitar tiempos de inactividad en plantas.</p>
+            <a href="#contacto" class="btn-main">Cotizar Componente</a>
+        </div>
     </section>
 
-    <section id="servicios" class="section">
-        <h3>Nuestra Capacidad Técnica</h3>
+    <section id="soluciones" class="section">
+        <h2>Capacidad Técnica e Industrial</h2>
         <div class="grid">
             <div class="card">
-                <h4>Aspas y Rotores Industriales</h4>
-                <p>Componentes aerodinámicos de alta precisión fabricados con polímeros técnicos avanzados para soportar exigentes cargas mecánicas.</p>
+                <h3>Álabes y Rotores</h3>
+                <p>Diseño avanzado y fabricación de álabes y componentes aerodinámicos optimizados para ventilación industrial y sistemas de bombeo con estrictas tolerancias mecánicas.</p>
             </div>
             <div class="card">
-                <h4>Tapas y Carcasas de Motores</h4>
-                <p>Envolventes estructurales a medida, optimizadas para resistencia térmica, disipación y protección en entornos de trabajo severos.</p>
-            </div>
-            <div class="card">
-                <h4>Repuestos Críticos y Prototipos</h4>
-                <p>Ingeniería inversa y producción rápida de piezas de reemplazo para evitar tiempos improductivos (downtime) en líneas de producción.</p>
-            </div>
-        </div>
-    </section>
-
-    <footer id="contacto">
-        <div class="footer-content">
-            <div>
-                <h4>Contacto Comercial</h4>
-                <p><strong>Teléfono / WhatsApp:</strong> +56 9 XXXX XXXX</p>
-                <p><strong>Correo electrónico:</strong> contacto@mugonza.cl</p>
-            </div>
-            <div>
-                <h4>Ubicación y Planta</h4>
-                <p><strong>Dirección:</strong> Tu dirección industrial, Ciudad, País.</p>
-                <p><strong>Horarios:</strong> Lunes a Viernes de 8:30 a 18:00 hrs.</p>
-            </div>
-        </div>
-    </footer>
-
-</body>
-</html>
+                <h3>Carcasas y Tapas con Aletas de Disipación</h3>
+                <p>Envolventes estructurales e industriales dotadas de aletas de enfriamiento para asegurar una gestión térmica óptima y máxima resistencia en entornos operativos severos.</p>
