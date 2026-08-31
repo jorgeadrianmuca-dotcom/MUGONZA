@@ -22,16 +22,16 @@
             width: 100%;
             max-width: 850px;
             background-color: #e3ded6;
-            padding: 50px;
+            padding: 40px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.12);
         }
 
         /* Cabecera */
         .header {
-            margin-bottom: 35px;
+            margin-bottom: 25px;
         }
         .brand-title {
-            font-size: 46px;
+            font-size: 44px;
             font-weight: 800;
             color: #7b784a;
             letter-spacing: 1px;
@@ -39,73 +39,66 @@
             line-height: 1;
         }
         .brand-subtitle {
-            font-size: 18px;
+            font-size: 17px;
             font-weight: 700;
             color: #1c252c;
             text-transform: uppercase;
             letter-spacing: 0.5px;
-            margin: 0 0 15px 0;
+            margin: 0 0 12px 0;
         }
         .contact-info {
             font-size: 13px;
             color: #333;
-            margin-bottom: 4px;
+            margin-bottom: 3px;
             font-weight: 500;
         }
 
-        /* Bloque de Servicios con fondo azul integrado de lado a lado */
+        /* Estilo general para las cajas de sección */
+        .section-box {
+            background-color: #ded7ce;
+            border: 1px solid #c9c0b6;
+            border-radius: 6px;
+            padding: 16px 20px;
+            margin-bottom: 15px;
+        }
+        
+        /* Caja destacada para Servicios */
         .services-box {
             background-color: #2c4d59;
             color: #ffffff;
-            padding: 22px 25px;
-            margin: 0 -50px 30px -50px;
+            border: none;
         }
         .services-box h2 {
-            font-size: 17px;
-            letter-spacing: 1px;
-            margin: 0 0 10px 0;
-            text-transform: uppercase;
-        }
-        .services-box ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-        .services-box li {
-            font-size: 14px;
-            margin-bottom: 6px;
-            font-weight: 500;
-            letter-spacing: 0.3px;
+            color: #ffffff;
         }
         .services-box li::before {
             content: "• ";
             color: #ffffff;
         }
 
-        /* Resto de secciones */
-        .section-block {
-            margin-bottom: 30px;
-        }
-        .section-block h2 {
-            font-size: 17px;
+        .section-box h2 {
+            font-size: 15px;
             letter-spacing: 1px;
             color: #1c252c;
-            margin: 0 0 10px 0;
+            margin: 0 0 8px 0;
             text-transform: uppercase;
         }
-        .section-block ul {
+        .section-box ul {
             list-style: none;
             padding: 0;
             margin: 0;
         }
-        .section-block li {
-            font-size: 14px;
+        .section-box li {
+            font-size: 13px;
             color: #2b353d;
-            margin-bottom: 6px;
+            margin-bottom: 4px;
             font-weight: 500;
             letter-spacing: 0.3px;
         }
-        .section-block li::before {
+        .services-box li {
+            color: #ffffff;
+        }
+        .section-box li::before {
             content: "• ";
             color: #2b353d;
             font-weight: bold;
@@ -115,36 +108,35 @@
         .bottom-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 30px;
-            margin-top: 10px;
+            gap: 15px;
         }
 
-        /* Contenedor de galería lateral para todas las imágenes limpias */
+        /* Contenedor de galería lateral para las imágenes */
         .images-sidebar {
             position: absolute;
             right: 40px;
             top: 40px;
-            width: 220px;
+            width: 210px;
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 10px;
+            gap: 8px;
             z-index: 2;
         }
         .img-card {
             background-color: #0b0f12;
             border-radius: 4px;
-            padding: 5px;
+            padding: 4px;
             text-align: center;
         }
         .images-sidebar img {
             width: 100%;
-            height: 90px;
+            height: 80px;
             object-fit: contain;
             display: block;
-            margin-bottom: 3px;
+            margin-bottom: 2px;
         }
         .img-label {
-            font-size: 8px;
+            font-size: 7px;
             color: #bbb;
             font-weight: 600;
             margin: 0;
@@ -153,11 +145,7 @@
 
         @media (max-width: 850px) {
             .flyer {
-                padding: 25px;
-            }
-            .services-box {
-                margin: 0 -25px 25px -25px;
-                padding: 15px 25px;
+                padding: 20px;
             }
             .images-sidebar {
                 position: relative;
@@ -165,11 +153,10 @@
                 top: auto;
                 width: 100%;
                 grid-template-columns: repeat(3, 1fr);
-                margin-bottom: 25px;
+                margin-bottom: 20px;
             }
             .bottom-grid {
                 grid-template-columns: 1fr;
-                gap: 25px;
             }
         }
     </style>
@@ -178,7 +165,7 @@
 
     <div class="flyer">
         
-        <!-- Galería lateral con las 6 imágenes reales limpias -->
+        <!-- Galería lateral con las 6 imágenes -->
         <div class="images-sidebar">
             <div class="img-card">
                 <img src="blanco_2.jpg" alt="Soporte vertical">
@@ -214,8 +201,8 @@
             <div class="contact-info">✉️ ventas@mugonza.cl</div>
         </div>
 
-        <!-- Servicios (Franja azul horizontal) -->
-        <div class="services-box">
+        <!-- Servicios (Caja azul) -->
+        <div class="section-box services-box">
             <h2>Servicios</h2>
             <ul>
                 <li>IMPRESIÓN 3D FDM</li>
@@ -224,8 +211,8 @@
             </ul>
         </div>
 
-        <!-- Materiales -->
-        <div class="section-block">
+        <!-- Materiales (Caja individual) -->
+        <div class="section-box">
             <h2>Materiales</h2>
             <ul>
                 <li>PETG</li>
@@ -235,9 +222,9 @@
             </ul>
         </div>
 
-        <!-- Fila Inferior: Aplicaciones y Ventajas -->
+        <!-- Fila Inferior: Aplicaciones y Ventajas en cajas separadas -->
         <div class="bottom-grid">
-            <div class="section-block" style="margin-bottom: 0;">
+            <div class="section-box" style="margin-bottom: 0;">
                 <h2>Aplicaciones</h2>
                 <ul>
                     <li>REPUESTOS INDUSTRIALES</li>
@@ -245,7 +232,7 @@
                 </ul>
             </div>
 
-            <div class="section-block" style="margin-bottom: 0;">
+            <div class="section-box" style="margin-bottom: 0;">
                 <h2>Ventajas</h2>
                 <ul>
                     <li>FABRICACIÓN RÁPIDA Y PRECISA</li>
