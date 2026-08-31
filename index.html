@@ -38,6 +38,7 @@
             height: 75px;
             object-fit: contain;
             border-radius: 6px;
+            cursor: pointer;
         }
         .brand-info {
             display: flex;
@@ -221,18 +222,18 @@
 
     <div class="flyer">
         
-        <!-- Galería lateral con extensión .png -->
+        <!-- Galería lateral con nombres limpios (sin guiones bajos artificiales) -->
         <div class="images-sidebar">
             <div class="img-card" onclick="openModal('blanco.png', 'Soporte')">
-                <img src="blanco_2.png" alt="Soporte vertical">
+                <img src="blanco.png" alt="Soporte vertical">
                 <p class="img-label">Soporte</p>
             </div>
             <div class="img-card" onclick="openModal('negro.png', 'Conector')">
-                <img src="negro_2.png" alt="Conector roscado">
+                <img src="negro.png" alt="Conector roscado">
                 <p class="img-label">Conector</p>
             </div>
             <div class="img-card" onclick="openModal('blanco2.png', 'Estructural')">
-                <img src="blanco2_2.png" alt="Bloque estructural">
+                <img src="blanco2.png" alt="Bloque estructural">
                 <p class="img-label">Estructural</p>
             </div>
             <div class="img-card" onclick="openModal('negro2.png', 'Escuadra')">
@@ -240,7 +241,7 @@
                 <p class="img-label">Escuadra</p>
             </div>
             <div class="img-card" onclick="openModal('amarillo.png', 'Filtro')">
-                <img src="amarillo_2.png" alt="Filtro perforado">
+                <img src="amarillo.png" alt="Filtro perforado">
                 <p class="img-label">Filtro</p>
             </div>
             <div class="img-card" onclick="openModal('blanco3.png', 'Técnica')">
@@ -251,7 +252,7 @@
 
         <!-- Cabecera con Logo -->
         <div class="header">
-            <img src="logo.png" alt="Logo MUGONZA" class="brand-logo" onclick="openModal('logo.png', 'Logo MUGONZA')" style="cursor: pointer;" title="Ampliar logo">
+            <img src="logo.png" alt="Logo MUGONZA" class="brand-logo" onclick="openModal('logo.png', 'Logo MUGONZA')" title="Ampliar logo">
             <div class="brand-info">
                 <h1 class="brand-title">MUGONZA</h1>
                 <div class="brand-subtitle">Soluciones Industriales en Impresión 3D</div>
