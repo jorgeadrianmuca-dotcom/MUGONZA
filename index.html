@@ -31,7 +31,7 @@
             margin-bottom: 25px;
         }
         .brand-logo-main {
-            height: 65px;
+            height: 55px;
             width: auto;
             object-fit: contain;
             display: block;
@@ -111,51 +111,43 @@
             gap: 15px;
         }
 
-        /* Galería vertical integrada dentro de la página */
+        /* Columna lateral derecha flotante estilo flyer para las imágenes */
         .images-sidebar {
+            position: absolute;
+            right: 40px;
+            top: 40px;
+            width: 200px;
             display: flex;
             flex-direction: column;
-            gap: 10px;
-            margin-bottom: 15px;
+            gap: 15px;
+            z-index: 2;
         }
         .img-card {
-            background-color: transparent; /* Sin fondo estructurado */
+            background: transparent;
             border: none;
-            text-align: left;
+            text-align: center;
             cursor: pointer;
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            padding: 6px 10px;
-            border-radius: 6px;
-            transition: background-color 0.2s ease;
+            padding: 0;
+            transition: transform 0.2s ease;
         }
         .img-card:hover {
-            background-color: rgba(255, 255, 255, 0.4);
+            transform: scale(1.03);
         }
         .images-sidebar img {
-            width: 70px;
-            height: 70px;
+            width: 100%;
+            height: 150px;
             object-fit: contain;
             display: block;
-            mix-blend-mode: multiply; /* Elimina el fondo blanco de las miniaturas */
-        }
-        .img-info {
-            display: flex;
-            flex-direction: column;
+            mix-blend-mode: multiply; /* Elimina fondos blancos y se integra al diseño */
+            filter: drop-shadow(0 5px 10px rgba(0,0,0,0.15));
         }
         .img-label {
-            font-size: 13px;
-            color: #1c252c;
+            font-size: 9px;
+            color: #555;
             font-weight: 700;
-            margin: 0;
+            margin: 4px 0 0 0;
             text-transform: uppercase;
             letter-spacing: 0.5px;
-        }
-        .img-sublabel {
-            font-size: 11px;
-            color: #666;
-            margin: 2px 0 0 0;
         }
 
         /* Estilos del Modal para agrandar la imagen */
@@ -195,6 +187,15 @@
             .flyer {
                 padding: 20px;
             }
+            .images-sidebar {
+                position: relative;
+                right: auto;
+                top: auto;
+                width: 100%;
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                margin-bottom: 20px;
+            }
             .bottom-grid {
                 grid-template-columns: 1fr;
             }
@@ -205,6 +206,34 @@
 
     <div class="flyer">
         
+        <!-- Columna lateral flotante con las imágenes en columna sin fondo, integradas como en el flyer de referencia -->
+        <div class="images-sidebar">
+            <div class="img-card" onclick="openModal('blanco.png', 'Soporte')">
+                <img src="blanco.png" alt="Soporte vertical">
+                <p class="img-label">Soporte</p>
+            </div>
+            <div class="img-card" onclick="openModal('negro.png', 'Conector')">
+                <img src="negro.png" alt="Conector roscado">
+                <p class="img-label">Conector</p>
+            </div>
+            <div class="img-card" onclick="openModal('blanco2.png', 'Estructural')">
+                <img src="blanco2.png" alt="Bloque estructural">
+                <p class="img-label">Estructural</p>
+            </div>
+            <div class="img-card" onclick="openModal('negro2.png', 'Escuadra')">
+                <img src="negro2.png" alt="Escuadra">
+                <p class="img-label">Escuadra</p>
+            </div>
+            <div class="img-card" onclick="openModal('amarillo.png', 'Filtro')">
+                <img src="amarillo.png" alt="Filtro perforado">
+                <p class="img-label">Filtro</p>
+            </div>
+            <div class="img-card" onclick="openModal('blanco3.png', 'Técnica')">
+                <img src="blanco3.png" alt="Pieza técnica">
+                <p class="img-label">Técnica</p>
+            </div>
+        </div>
+
         <!-- Cabecera con el Logo principal -->
         <div class="header">
             <img src="logo.png" alt="MUGONZA Logo" class="brand-logo-main" onclick="openModal('logo.png', 'Logo MUGONZA')" title="Ampliar logo">
@@ -221,55 +250,6 @@
                 <li>DISEÑO CAD</li>
                 <li>ESCANEO 3D</li>
             </ul>
-        </div>
-
-        <!-- Galería vertical integrada y sin fondos pesados -->
-        <div class="section-box">
-            <h2>Galería de Productos</h2>
-            <div class="images-sidebar">
-                <div class="img-card" onclick="openModal('blanco.png', 'Soporte')">
-                    <img src="blanco.png" alt="Soporte vertical">
-                    <div class="img-info">
-                        <p class="img-label">Soporte</p>
-                        <p class="img-sublabel">Soporte vertical técnico</p>
-                    </div>
-                </div>
-                <div class="img-card" onclick="openModal('negro.png', 'Conector')">
-                    <img src="negro.png" alt="Conector roscado">
-                    <div class="img-info">
-                        <p class="img-label">Conector</p>
-                        <p class="img-sublabel">Conector roscado industrial</p>
-                    </div>
-                </div>
-                <div class="img-card" onclick="openModal('blanco2.png', 'Estructural')">
-                    <img src="blanco2.png" alt="Bloque estructural">
-                    <div class="img-info">
-                        <p class="img-label">Estructural</p>
-                        <p class="img-sublabel">Bloque estructural de alta resistencia</p>
-                    </div>
-                </div>
-                <div class="img-card" onclick="openModal('negro2.png', 'Escuadra')">
-                    <img src="negro2.png" alt="Escuadra">
-                    <div class="img-info">
-                        <p class="img-label">Escuadra</p>
-                        <p class="img-sublabel">Escuadra de sujeción</p>
-                    </div>
-                </div>
-                <div class="img-card" onclick="openModal('amarillo.png', 'Filtro')">
-                    <img src="amarillo.png" alt="Filtro perforado">
-                    <div class="img-info">
-                        <p class="img-label">Filtro</p>
-                        <p class="img-sublabel">Filtro perforado técnico</p>
-                    </div>
-                </div>
-                <div class="img-card" onclick="openModal('blanco3.png', 'Técnica')">
-                    <img src="blanco3.png" alt="Pieza técnica">
-                    <div class="img-info">
-                        <p class="img-label">Técnica</p>
-                        <p class="img-sublabel">Componente de precisión</p>
-                    </div>
-                </div>
-            </div>
         </div>
 
         <!-- Materiales -->
