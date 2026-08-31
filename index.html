@@ -36,7 +36,7 @@
             z-index: 1000;
         }
         .logo-container img {
-            height: 45px; /* Ajusta la altura de tu logo según necesites */
+            height: 80px; /* Tamaño ajustado y destacado para tu logo */
             width: auto;
             display: block;
         }
@@ -106,7 +106,7 @@
             background-color: #728148;
         }
 
-        /* Secciones de Soluciones Técnicas */
+        /* Secciones Generales */
         .section {
             padding: 5rem 3rem;
             max-width: 1200px;
@@ -118,6 +118,8 @@
             margin-bottom: 3rem;
             color: var(--primary-color);
         }
+        
+        /* Cuadrículas de Soluciones */
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -138,6 +140,40 @@
         .card p {
             color: #555555;
             font-size: 0.98rem;
+        }
+
+        /* Galería de Trabajos Reales */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 2rem;
+        }
+        .gallery-card {
+            background: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-radius: 6px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.04);
+        }
+        .gallery-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            display: block;
+            background-color: #000; /* Fondo negro para mantener estética de estudio en las fotos */
+        }
+        .gallery-info {
+            padding: 1.5rem;
+        }
+        .gallery-info h4 {
+            margin: 0 0 0.5rem 0;
+            color: var(--color-azul);
+            font-size: 1.2rem;
+        }
+        .gallery-info p {
+            margin: 0;
+            color: #666;
+            font-size: 0.9rem;
         }
 
         /* Pie de página (Contacto) */
@@ -168,16 +204,19 @@
 </head>
 <body>
 
+    <!-- Cabecera -->
     <header>
         <div class="logo-container">
             <img src="logo.png" alt="MUGONZA Logo">
         </div>
         <nav>
             <a href="#soluciones">Soluciones</a>
+            <a href="#galeria">Proyectos Reales</a>
             <a href="#contacto" class="btn-header">Contacto</a>
         </nav>
     </header>
 
+    <!-- Sección Principal (Hero) -->
     <section class="hero">
         <div class="hero-content">
             <h1>Fabricación Aditiva e <span>Impresión 3D Industrial</span></h1>
@@ -186,13 +225,84 @@
         </div>
     </section>
 
+    <!-- Sección de Soluciones Técnicas -->
     <section id="soluciones" class="section">
         <h2>Capacidad Técnica e Industrial</h2>
         <div class="grid">
             <div class="card">
                 <h3>Álabes y Rotores</h3>
-                <p>Diseño avanzado y fabricación de álabes y componentes aerodinámicos optimizados para ventilación industrial y sistemas de bombeo con estrictas tolerancias mecánicas.</p>
+                <p>Diseño avanzado y fabricación de componentes optimizados para ventilación industrial y sistemas con estrictas tolerancias mecánicas.</p>
             </div>
             <div class="card">
-                <h3>Carcasas y Tapas con Aletas de Disipación</h3>
-                <p>Envolventes estructurales e industriales dotadas de aletas de enfriamiento para asegurar una gestión térmica óptima y máxima resistencia en entornos operativos severos.</p>
+                <h3>Carcasas y Tapas Técnicas</h3>
+                <p>Envolventes estructurales y componentes ranurados para asegurar una gestión óptima y máxima resistencia en entornos operativos severos.</p>
+            </div>
+            <div class="card">
+                <h3>Repuestos Críticos y Prototipos</h3>
+                <p>Ingeniería inversa y producción inmediata de piezas de reemplazo discontinuadas, garantizando continuidad operativa en líneas de producción.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galería con los nombres de tus archivos exactos -->
+    <section id="galeria" class="section" style="background-color: var(--bg-light);">
+        <h2>Piezas y Componentes Fabricados</h2>
+        <div class="gallery-grid">
+            
+            <!-- Pieza 1: blanco2.jpg -->
+            <div class="gallery-card">
+                <img src="blanco2.jpg" alt="Bloque estructural blanco alargado">
+                <div class="gallery-info">
+                    <h4>Bloque Estructural Técnico</h4>
+                    <p>Perfil polimérico vertical de alta precisión con canal interno y ranura de anclaje inferior.</p>
+                </div>
+            </div>
+
+            <!-- Pieza 2: negro.jpg -->
+            <div class="gallery-card">
+                <img src="negro.jpg" alt="Adaptador o conector roscado negro">
+                <div class="gallery-info">
+                    <h4>Adaptador Roscado Industrial</h4>
+                    <p>Componente cilíndrico en polímero técnico negro con roscado interno mecanizado de alta definición.</p>
+                </div>
+            </div>
+
+            <!-- Pieza 3: amarillo.png -->
+            <div class="gallery-card">
+                <img src="amarillo.png" alt="Filtro o tapa ranurada amarilla">
+                <div class="gallery-info">
+                    <h4>Tapa / Filtro Perforado</h4>
+                    <p>Pieza circular en polímero amarillo con patrón de microperforaciones y muesca de sujeción lateral.</p>
+                </div>
+            </div>
+
+            <!-- Pieza 4: blanco.jpg -->
+            <div class="gallery-card">
+                <img src="blanco.jpg" alt="Soporte con perno guía blanco">
+                <div class="gallery-info">
+                    <h4>Soporte con Guía Vertical</h4>
+                    <p>Base de fijación con perforaciones de anclaje y vástago cilíndrico central de alineación de precisión.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Sección de Contacto (Footer) -->
+    <footer id="contacto">
+        <div class="footer-content">
+            <div>
+                <h4>Contacto Comercial</h4>
+                <p><strong>Teléfono / WhatsApp:</strong> +56 9 XXXX XXXX</p>
+                <p><strong>Correo electrónico:</strong> contacto@mugonza.cl</p>
+            </div>
+            <div>
+                <h4>Ubicación de Planta</h4>
+                <p><strong>Dirección:</strong> Tu dirección industrial, Ciudad, País.</p>
+                <p><strong>Horarios:</strong> Lunes a Viernes de 8:30 a 18:00 hrs.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
