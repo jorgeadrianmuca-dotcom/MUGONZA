@@ -3,239 +3,260 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MUGONZA - Soluciones Industriales en Impresión 3D</title>
+    <title>MUGONZA | Soluciones Industriales en Impresión 3D</title>
     <style>
-        *, *::before, *::after {
+        :root {
+            --bg-color: #e4e1da;
+            --card-bg: #ffffff;
+            --accent-dark: #1d333b;
+            --accent-teal: #2c4d59;
+            --accent-green: #7a8b52;
+            --text-main: #1a2228;
+            --text-muted: #55626a;
+        }
+        * {
             box-sizing: border-box;
         }
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
             margin: 0;
-            padding: 20px;
-            color: #1a232a;
-            background-color: #e8e5df;
-            line-height: 1.5;
+            padding: 40px 20px;
             display: flex;
             justify-content: center;
         }
-        .flyer-container {
+        .container {
             width: 100%;
-            max-width: 800px;
-            background-color: #e8e5df;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            max-width: 900px;
+            background: linear-gradient(135deg, #f2efe9 0%, #e4e1da 100%);
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.6);
         }
+        /* Cabecera integrada */
         .header {
-            margin-bottom: 25px;
-            border-bottom: 2px solid #2c4d59;
-            padding-bottom: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            border-bottom: 3px solid var(--accent-teal);
+            padding-bottom: 25px;
+            margin-bottom: 30px;
         }
         .brand-title {
-            font-size: 38px;
-            font-weight: 800;
-            color: #2c4d59;
-            letter-spacing: 1px;
+            font-size: 42px;
+            font-weight: 900;
+            color: var(--accent-teal);
+            letter-spacing: 1.5px;
             margin: 0 0 5px 0;
+            line-height: 1;
         }
         .brand-subtitle {
-            font-size: 16px;
-            font-weight: 700;
-            color: #3b4a54;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin: 0 0 12px 0;
-        }
-        .contact-info {
             font-size: 15px;
-            color: #333333;
-            margin: 4px 0;
+            font-weight: 700;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin: 0;
+        }
+        .contact-badge {
+            text-align: right;
+            font-size: 14px;
+            color: var(--text-main);
             font-weight: 500;
         }
-        
-        /* Layout Grid */
-        .main-grid {
+        .contact-badge div {
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 8px;
+        }
+
+        /* Estructura Bento Grid principal */
+        .bento-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: repeat(3, 1fr);
             gap: 20px;
-            margin-bottom: 20px;
+            margin-bottom: 30px;
         }
-
-        .section-box {
-            background-color: #2c4d59;
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+            border: 1px solid #dcd7ce;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+        }
+        .card.dark {
+            background-color: var(--accent-teal);
             color: #ffffff;
-            padding: 20px;
-            border-radius: 6px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            border: none;
         }
-        .section-box h3 {
-            margin: 0 0 12px 0;
-            font-size: 15px;
-            letter-spacing: 0.5px;
+        .card h3 {
+            margin-top: 0;
+            font-size: 16px;
             text-transform: uppercase;
-            border-bottom: 1px solid rgba(255,255,255,0.3);
-            padding-bottom: 6px;
+            letter-spacing: 0.8px;
+            margin-bottom: 16px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+            padding-bottom: 8px;
+            color: var(--accent-teal);
         }
-        .section-box ul {
+        .card.dark h3 {
+            color: #ffffff;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .card ul {
             margin: 0;
-            padding-left: 20px;
-            font-size: 15px;
+            padding-left: 18px;
+            font-size: 14px;
+            line-height: 1.6;
         }
-        .section-box li {
-            margin-bottom: 8px;
-        }
-
-        .section-light {
-            background-color: rgba(255, 255, 255, 0.7);
-            border: 1px solid #d0cbbd;
-            color: #1a232a;
-            padding: 20px;
-            border-radius: 6px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.03);
-            margin-bottom: 20px;
-        }
-        .section-light h3 {
-            margin: 0 0 12px 0;
-            font-size: 15px;
-            color: #2c4d59;
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
-            border-bottom: 1px solid #b8b2a3;
-            padding-bottom: 6px;
-        }
-        .section-light ul {
-            margin: 0;
-            padding-left: 20px;
-            font-size: 15px;
-        }
-        .section-light li {
-            margin-bottom: 8px;
-        }
-
-        /* Galería inferior con las 4 imágenes reales */
-        .gallery-container {
-            margin-top: 25px;
-            background-color: #ffffff;
-            padding: 20px;
-            border-radius: 6px;
-            border: 1px solid #d0cbbd;
-        }
-        .gallery-title {
-            font-size: 15px;
-            color: #2c4d59;
-            text-transform: uppercase;
-            margin: 0 0 15px 0;
-            font-weight: 700;
-            text-align: center;
-            letter-spacing: 0.5px;
-        }
-        .img-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 12px;
-        }
-        .img-card {
-            text-align: center;
-        }
-        .img-card img {
-            width: 100%;
-            height: 120px;
-            object-fit: contain;
-            background-color: #0b0f12;
-            border-radius: 4px;
-            padding: 6px;
-            display: block;
+        .card li {
             margin-bottom: 6px;
         }
-        .img-caption {
+
+        /* Tarjeta extendida para galería integrada */
+        .gallery-section {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            padding: 25px;
+            border: 1px solid #dcd7ce;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+        }
+        .gallery-title {
+            font-size: 16px;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            color: var(--accent-teal);
+            margin: 0 0 20px 0;
+            font-weight: 700;
+            text-align: center;
+        }
+        .pieces-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+        }
+        .piece-card {
+            background: #0f171d;
+            border-radius: 8px;
+            overflow: hidden;
+            text-align: center;
+            border: 1px solid #26343f;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .piece-card img {
+            width: 100%;
+            height: 130px;
+            object-fit: contain;
+            padding: 10px;
+            display: block;
+        }
+        .piece-name {
+            background-color: #1a2630;
+            color: #ffffff;
             font-size: 11px;
-            color: #444;
             font-weight: 600;
+            padding: 8px 6px;
             margin: 0;
+            letter-spacing: 0.3px;
         }
 
-        @media (max-width: 600px) {
-            .main-grid {
+        @media (max-width: 768px) {
+            .bento-grid {
                 grid-template-columns: 1fr;
             }
-            .img-grid {
+            .pieces-grid {
                 grid-template-columns: 1fr 1fr;
+            }
+            .header {
+                flex-direction: column;
+                gap: 15px;
+            }
+            .contact-badge {
+                text-align: left;
+            }
+            .contact-badge div {
+                justify-content: flex-start;
             }
         }
     </style>
 </head>
 <body>
 
-    <div class="flyer-container">
+    <div class="container">
+        <!-- Cabecera Corporativa -->
         <div class="header">
-            <h1 class="brand-title">MUGONZA</h1>
-            <div class="brand-subtitle">Soluciones Industriales en Impresión 3D</div>
-            <div class="contact-info">📍 Concepción, Región del Biobio</div>
-            <div class="contact-info">✉️ ventas@mugonza.cl</div>
-        </div>
-
-        <div class="main-grid">
             <div>
-                <div class="section-box">
-                    <h3>Servicios</h3>
-                    <ul>
-                        <li>Impresión 3D FDM</li>
-                        <li>Diseño CAD</li>
-                        <li>Escaneo 3D</li>
-                    </ul>
-                </div>
-
-                <div class="section-light" style="margin-top: 20px;">
-                    <h3>Materiales</h3>
-                    <ul>
-                        <li>PETG</li>
-                        <li>Nylon</li>
-                        <li>Fibra de Carbono</li>
-                        <li>ABS</li>
-                        <li>TPU</li>
-                        <li>EPA-CF</li>
-                    </ul>
-                </div>
+                <h1 class="brand-title">MUGONZA</h1>
+                <p class="brand-subtitle">Soluciones Industriales en Impresión 3D</p>
             </div>
-
-            <div>
-                <div class="section-box">
-                    <h3>Aplicaciones</h3>
-                    <ul>
-                        <li>Repuestos Industriales</li>
-                        <li>Prototipos</li>
-                    </ul>
-                </div>
-
-                <div class="section-light" style="margin-top: 20px;">
-                    <h3>Ventajas</h3>
-                    <ul>
-                        <li>✓ Fabricación rápida y precisa</li>
-                        <li>✓ Componentes de alta resistencia</li>
-                        <li>✓ Asesoría técnica especializada</li>
-                    </ul>
-                </div>
+            <div class="contact-badge">
+                <div>📍 Concepción, Región del Biobío</div>
+                <div>✉️ ventas@mugonza.cl</div>
             </div>
         </div>
 
-        <div class="gallery-container">
-            <div class="gallery-title">Piezas y Componentes Fabricados</div>
-            <div class="img-grid">
-                <div class="img-card">
+        <!-- Secciones Organizadas en Tarjetas Modernas -->
+        <div class="bento-grid">
+            <div class="card dark">
+                <h3>Servicios</h3>
+                <ul>
+                    <li>Impresión 3D FDM</li>
+                    <li>Diseño CAD avanzado</li>
+                    <li>Escaneo 3D industrial</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Materiales</h3>
+                <ul>
+                    <li>PETG & ABS</li>
+                    <li>Nylon & TPU</li>
+                    <li>Fibra de Carbono</li>
+                    <li>EPA-CF</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Aplicaciones & Ventajas</h3>
+                <ul>
+                    <li>Repuestos bajo demanda</li>
+                    <li>Prototipos funcionales</li>
+                    <li><b>✓</b> Fabricación rápida y precisa</li>
+                    <li><b>✓</b> Alta resistencia mecánica</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Galería de Piezas Reales Interactiva -->
+        <div class="gallery-section">
+            <h2 class="gallery-title">Repertorio de Componentes Fabricados</h2>
+            <div class="pieces-grid">
+                <div class="piece-card">
                     <img src="blanco2.png" alt="Bloque Estructural">
-                    <p class="img-caption">Bloque Estructural</p>
+                    <p class="piece-name">Bloque Estructural</p>
                 </div>
-                <div class="img-card">
+                <div class="piece-card">
                     <img src="negro.png" alt="Adaptador Roscado">
-                    <p class="img-caption">Adaptador Roscado</p>
+                    <p class="piece-name">Adaptador Roscado</p>
                 </div>
-                <div class="img-card">
+                <div class="piece-card">
                     <img src="amarillo.png" alt="Tapa Perforada">
-                    <p class="img-caption">Tapa Perforada</p>
+                    <p class="piece-name">Tapa Perforada</p>
                 </div>
-                <div class="img-card">
+                <div class="piece-card">
                     <img src="blanco.png" alt="Soporte con Guía">
-                    <p class="img-caption">Soporte con Guía</p>
+                    <p class="piece-name">Soporte con Guía</p>
                 </div>
             </div>
         </div>
