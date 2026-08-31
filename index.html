@@ -11,7 +11,12 @@
         body {
             margin: 0;
             padding: 40px 20px;
-            background-color: #d2cec5;
+            /* Fondo base con patrón de cuadrícula industrial muy sutil estilo plano técnico */
+            background-color: #dfdbd2;
+            background-image: 
+                linear-gradient(to right, rgba(0, 0, 0, 0.04) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
+            background-size: 30px 30px;
             font-family: 'Segoe UI', Arial, sans-serif;
             color: #2b353d;
             display: flex;
@@ -20,12 +25,16 @@
         .flyer {
             width: 100%;
             max-width: 950px;
-            background-color: #e3ded6;
-            padding: 40px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+            background-color: #e5e0d8;
+            background-image: 
+                linear-gradient(to right, rgba(255, 255, 255, 0.15) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.15) 1px, transparent 1px);
+            background-size: 30px 30px;
+            padding: 45px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
             display: grid;
-            grid-template-columns: 1fr 240px; /* Columna izquierda de texto y derecha para imágenes */
-            gap: 30px;
+            grid-template-columns: 1fr 200px;
+            gap: 35px;
             align-items: start;
         }
 
@@ -37,14 +46,14 @@
 
         /* Cabecera y Logo Principal */
         .header {
-            margin-bottom: 25px;
+            margin-bottom: 30px;
         }
         .brand-logo-main {
             height: 55px;
             width: auto;
             object-fit: contain;
             display: block;
-            margin-bottom: 5px;
+            margin-bottom: 8px;
             mix-blend-mode: multiply;
             cursor: pointer;
         }
@@ -59,23 +68,27 @@
         .contact-info {
             font-size: 13px;
             color: #333;
-            margin-bottom: 2px;
+            margin-bottom: 3px;
             font-weight: 500;
         }
 
-        /* Cajas de sección */
+        /* Secciones */
         .section-box {
-            background-color: #ded7ce;
-            border: 1px solid #c9c0b6;
-            border-radius: 6px;
-            padding: 16px 20px;
-            margin-bottom: 15px;
+            background-color: transparent;
+            border: none;
+            padding: 12px 0;
+            margin-bottom: 12px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.06);
         }
         
         .services-box {
             background-color: #2c4d59;
             color: #ffffff;
+            padding: 18px 20px;
+            border-radius: 4px;
             border: none;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
         }
         .services-box h2 {
             color: #ffffff;
@@ -86,10 +99,10 @@
         }
 
         .section-box h2 {
-            font-size: 15px;
+            font-size: 14px;
             letter-spacing: 1px;
             color: #1c252c;
-            margin: 0 0 8px 0;
+            margin: 0 0 6px 0;
             text-transform: uppercase;
         }
         .section-box ul {
@@ -117,15 +130,16 @@
         .bottom-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 15px;
+            gap: 20px;
+            margin-top: 5px;
         }
 
-        /* Columna lateral derecha de imágenes en vertical sin fondo */
+        /* Columna derecha de imágenes en vertical sin nombres abajo */
         .images-sidebar {
             display: flex;
             flex-direction: column;
-            gap: 20px;
-            padding-top: 10px;
+            gap: 15px;
+            padding-top: 5px;
         }
         .img-card {
             background: transparent;
@@ -140,22 +154,14 @@
         }
         .images-sidebar img {
             width: 100%;
-            height: 160px;
+            height: 140px;
             object-fit: contain;
             display: block;
-            mix-blend-mode: multiply; /* Fondo integrado limpiamente */
-            filter: drop-shadow(0 5px 10px rgba(0,0,0,0.15));
-        }
-        .img-label {
-            font-size: 10px;
-            color: #444;
-            font-weight: 700;
-            margin: 6px 0 0 0;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
+            mix-blend-mode: multiply;
+            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.1));
         }
 
-        /* Estilos del Modal para agrandar la imagen */
+        /* Estilos del Modal adaptado para piezas oscuras y claras */
         .modal {
             display: none;
             position: fixed;
@@ -164,31 +170,56 @@
             top: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.85);
+            background-color: rgba(220, 216, 208, 0.92);
+            backdrop-filter: blur(4px);
             justify-content: center;
             align-items: center;
             padding: 20px;
+            flex-direction: column;
+        }
+        .modal-container {
+            position: relative;
+            background-color: #f4f1ea;
+            border: 1px solid #d2ccc0;
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+            max-width: 90%;
+            max-height: 85vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
         .modal-content {
-            max-width: 90%;
-            max-height: 90vh;
+            max-width: 80vw;
+            max-height: 70vh;
             object-fit: contain;
-            border-radius: 6px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
-            background-color: #0b0f12;
-            padding: 10px;
+            display: block;
+            mix-blend-mode: multiply; 
+        }
+        .modal-title {
+            margin-top: 15px;
+            font-size: 14px;
+            font-weight: 700;
+            color: #2b353d;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
         .modal-close {
             position: absolute;
-            top: 25px;
-            right: 35px;
-            color: #fff;
-            font-size: 35px;
+            top: 15px;
+            right: 20px;
+            color: #555;
+            font-size: 28px;
             font-weight: bold;
             cursor: pointer;
+            transition: color 0.2s;
+        }
+        .modal-close:hover {
+            color: #000;
         }
 
-        /* Adaptabilidad para pantallas pequeñas (móviles) */
+        /* Adaptabilidad para dispositivos móviles */
         @media (max-width: 850px) {
             .flyer {
                 grid-template-columns: 1fr;
@@ -198,7 +229,7 @@
                 display: grid;
                 grid-template-columns: repeat(3, 1fr);
                 gap: 10px;
-                margin-top: 20px;
+                margin-top: 25px;
             }
             .bottom-grid {
                 grid-template-columns: 1fr;
@@ -210,7 +241,7 @@
 
     <div class="flyer">
         
-        <!-- Columna Izquierda: Todo el contenido de texto -->
+        <!-- Columna Izquierda: Texto ordenado -->
         <div class="main-content">
             <!-- Cabecera con el Logo principal -->
             <div class="header">
@@ -243,7 +274,7 @@
 
             <!-- Aplicaciones y Ventajas -->
             <div class="bottom-grid">
-                <div class="section-box" style="margin-bottom: 0;">
+                <div class="section-box" style="border-bottom: none; padding-bottom: 0;">
                     <h2>Aplicaciones</h2>
                     <ul>
                         <li>REPUESTOS INDUSTRIALES</li>
@@ -251,7 +282,7 @@
                     </ul>
                 </div>
 
-                <div class="section-box" style="margin-bottom: 0;">
+                <div class="section-box" style="border-bottom: none; padding-bottom: 0;">
                     <h2>Ventajas</h2>
                     <ul>
                         <li>FABRICACIÓN RÁPIDA Y PRECISA</li>
@@ -262,49 +293,49 @@
             </div>
         </div>
 
-        <!-- Columna Derecha: Imágenes en vertical ordenadas -->
+        <!-- Columna Derecha: Imágenes en vertical sin texto inferior -->
         <div class="images-sidebar">
-            <div class="img-card" onclick="openModal('blanco.png', 'Soporte')">
+            <div class="img-card" onclick="openModal('blanco.png', 'Soporte Vertical')">
                 <img src="blanco.png" alt="Soporte vertical">
-                <p class="img-label">Soporte</p>
             </div>
-            <div class="img-card" onclick="openModal('negro.png', 'Conector')">
+            <div class="img-card" onclick="openModal('negro.png', 'Conector Roscado')">
                 <img src="negro.png" alt="Conector roscado">
-                <p class="img-label">Conector</p>
             </div>
-            <div class="img-card" onclick="openModal('blanco2.png', 'Estructural')">
+            <div class="img-card" onclick="openModal('blanco2.png', 'Bloque Estructural')">
                 <img src="blanco2.png" alt="Bloque estructural">
-                <p class="img-label">Estructural</p>
             </div>
-            <div class="img-card" onclick="openModal('negro2.png', 'Escuadra')">
+            <div class="img-card" onclick="openModal('negro2.png', 'Escuadra de Sujeción')">
                 <img src="negro2.png" alt="Escuadra">
-                <p class="img-label">Escuadra</p>
             </div>
-            <div class="img-card" onclick="openModal('amarillo.png', 'Filtro')">
+            <div class="img-card" onclick="openModal('amarillo.png', 'Filtro Perforado')">
                 <img src="amarillo.png" alt="Filtro perforado">
-                <p class="img-label">Filtro</p>
             </div>
-            <div class="img-card" onclick="openModal('blanco3.png', 'Técnica')">
+            <div class="img-card" onclick="openModal('blanco3.png', 'Pieza Técnica')">
                 <img src="blanco3.png" alt="Pieza técnica">
-                <p class="img-label">Técnica</p>
             </div>
         </div>
 
     </div>
 
-    <!-- Ventana Modal para ampliar imágenes -->
+    <!-- Ventana Modal optimizada -->
     <div id="imageModal" class="modal" onclick="closeModal()">
-        <span class="modal-close">&times;</span>
-        <img class="modal-content" id="modalImg">
+        <div class="modal-container" onclick="event.stopPropagation()">
+            <span class="modal-close" onclick="closeModal()">&times;</span>
+            <img class="modal-content" id="modalImg">
+        </div>
+        <div class="modal-title" id="modalTitle"></div>
     </div>
 
     <script>
         function openModal(src, title) {
             const modal = document.getElementById("imageModal");
             const modalImg = document.getElementById("modalImg");
+            const modalTitle = document.getElementById("modalTitle");
+            
             modal.style.display = "flex";
             modalImg.src = src;
             modalImg.alt = title;
+            modalTitle.textContent = title;
         }
 
         function closeModal() {
