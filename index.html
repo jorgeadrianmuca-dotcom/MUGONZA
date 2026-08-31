@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MUGONZA | Impresión 3D Industrial y Fabricación Aditiva</title>
+    <style>
+        /* Estilos adaptados con los colores del logo de MUGONZA */
+        :root {
+            --color-verde: #8a9a5b; /* Verde oliva del logo (aproximado) */
+            --color-azul: #2c4d59;  /* Azul acero del isotipo */
+            --primary-color: #1a232a;
+            --bg-light: #f8f9fa;
+            --text-color: #333333;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        header {
+            background-color: var(--primary-color);
+            color: #ffffff;
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 4px solid var(--color-verde);
+        }
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 1.8rem;
+            letter-spacing: 1px;
+            color: #ffffff;
+        }
+        header h1 span {
+            color: var(--color-verde);
+        }
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            margin-left: 25px;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: var(--color-verde);
+        }
+        .hero {
+            background: linear-gradient(rgba(26, 35, 42, 0.85), rgba(26, 35, 42, 0.85)), url('https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            text-align: center;
+            padding: 6rem 2rem;
+            color: #ffffff;
+        }
+        .hero h2 {
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+        }
+        .hero p {
+            font-size: 1.25rem;
+            max-width: 750px;
+            margin: 0 auto 2.5rem auto;
+            color: #d1d5db;
+        }
+        .btn {
+            background-color: var(--color-verde);
+            color: #ffffff;
+            padding: 0.85rem 2rem;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 4px;
+            transition: background 0.3s;
+        }
+        .btn:hover {
+            background-color: #728148;
+        }
+        .section {
+            padding: 5rem 2rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .section h3 {
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 3rem;
+            color: var(--primary-color);
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        .card {
+            background: var(--bg-light);
+            border-left: 5px solid var(--color-azul);
+            padding: 2rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border-radius: 0 6px 6px 0;
+        }
+        .card h4 {
+            color: var(--color-azul);
+            margin-top: 0;
+            font-size: 1.3rem;
+        }
+        footer {
+            background-color: var(--primary-color);
+            color: #ffffff;
+            padding: 4rem 2
