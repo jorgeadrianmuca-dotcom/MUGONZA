@@ -134,7 +134,7 @@
             font-weight: 900;
         }
 
-        /* Columna derecha de imágenes con efecto tarjeta flotante */
+        /* Columna derecha de imágenes sin fondo blanco */
         .images-sidebar {
             display: flex;
             flex-direction: column;
@@ -142,19 +142,15 @@
             padding-top: 2px;
         }
         .img-card {
-            background: #ffffff;
-            border: 1px solid rgba(0, 0, 0, 0.06);
-            border-radius: 5px;
+            background: transparent;
+            border: none;
             text-align: center;
             cursor: pointer;
-            padding: 8px 6px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-            transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+            padding: 4px 0;
+            transition: transform 0.25s ease;
         }
         .img-card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.12);
-            border-color: rgba(38, 67, 78, 0.3);
+            transform: scale(1.04);
         }
         .images-sidebar img {
             width: 100%;
@@ -162,7 +158,7 @@
             object-fit: contain;
             display: block;
             mix-blend-mode: multiply;
-            filter: drop-shadow(0 3px 6px rgba(0,0,0,0.08));
+            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.1));
         }
 
         /* Estilos del Modal adaptado para contraste de piezas */
@@ -295,7 +291,7 @@
             </div>
         </div>
 
-        <!-- Columna Derecha: Imágenes con tarjetas flotantes -->
+        <!-- Columna Derecha: Imágenes limpias sin fondo blanco -->
         <div class="images-sidebar">
             <div class="img-card" onclick="openModal('blanco.png', 'Soporte Vertical')">
                 <img src="blanco.png" alt="Soporte vertical">
