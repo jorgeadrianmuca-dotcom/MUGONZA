@@ -42,13 +42,13 @@
         .header {
             grid-column: 1 / -1;
             text-align: center;
-            margin-bottom: 25px;
+            margin-bottom: 30px;
             display: flex;
             flex-direction: column;
             align-items: center;
         }
         .brand-logo-main {
-            height: 110px; /* Doble de tamaño (aprox 55px -> 110px) */
+            height: 110px; /* Logo al doble de tamaño */
             width: auto;
             object-fit: contain;
             display: block;
@@ -80,38 +80,22 @@
         .main-content {
             display: flex;
             flex-direction: column;
+            gap: 12px; /* Espaciado compacto entre secciones sin dejar vacíos */
         }
 
-        /* Secciones */
+        /* Estilo unificado para todas las secciones (Servicios, Materiales, Aplicaciones y Ventajas) */
         .section-box {
-            background-color: transparent;
-            border: none;
-            padding: 10px 0;
-            margin-bottom: 8px;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.06);
-        }
-        
-        .services-box {
-            background-color: #2c4d59;
+            background-color: #2c4d59; /* Mismo color unificado para todas las cajas */
             color: #ffffff;
-            padding: 18px 20px;
+            padding: 16px 20px;
             border-radius: 4px;
             border: none;
-            margin-bottom: 15px;
             box-shadow: 0 4px 10px rgba(0,0,0,0.08);
         }
-        .services-box h2 {
-            color: #ffffff;
-        }
-        .services-box li::before {
-            content: "• ";
-            color: #ffffff;
-        }
-
         .section-box h2 {
             font-size: 14px;
             letter-spacing: 1px;
-            color: #1c252c;
+            color: #ffffff;
             margin: 0 0 6px 0;
             text-transform: uppercase;
         }
@@ -122,17 +106,14 @@
         }
         .section-box li {
             font-size: 13px;
-            color: #2b353d;
+            color: #ffffff;
             margin-bottom: 4px;
             font-weight: 500;
             letter-spacing: 0.3px;
         }
-        .services-box li {
-            color: #ffffff;
-        }
         .section-box li::before {
             content: "• ";
-            color: #2b353d;
+            color: #ffffff;
             font-weight: bold;
         }
 
@@ -240,7 +221,6 @@
 
     <div class="flyer">
         
-        <!-- Cabecera general con el Logo centrado al doble de tamaño -->
         <div class="header">
             <img src="logo.png" alt="MUGONZA Logo" class="brand-logo-main" onclick="openModal('logo.png', 'Logo MUGONZA')" title="Ampliar logo">
             <div class="brand-subtitle">Soluciones Industriales en Impresión 3D</div>
@@ -250,10 +230,8 @@
             </div>
         </div>
 
-        <!-- Columna Izquierda: Todas las secciones en vertical -->
         <div class="main-content">
-            <!-- Servicios -->
-            <div class="section-box services-box">
+            <div class="section-box">
                 <h2>Servicios</h2>
                 <ul>
                     <li>IMPRESIÓN 3D FDM</li>
@@ -262,7 +240,6 @@
                 </ul>
             </div>
 
-            <!-- Materiales -->
             <div class="section-box">
                 <h2>Materiales</h2>
                 <ul>
@@ -273,7 +250,6 @@
                 </ul>
             </div>
 
-            <!-- Aplicaciones -->
             <div class="section-box">
                 <h2>Aplicaciones</h2>
                 <ul>
@@ -282,8 +258,7 @@
                 </ul>
             </div>
 
-            <!-- Ventajas -->
-            <div class="section-box" style="border-bottom: none; padding-bottom: 0;">
+            <div class="section-box">
                 <h2>Ventajas</h2>
                 <ul>
                     <li>FABRICACIÓN RÁPIDA Y PRECISA</li>
@@ -293,7 +268,6 @@
             </div>
         </div>
 
-        <!-- Columna Derecha: Imágenes en vertical con menor separación -->
         <div class="images-sidebar">
             <div class="img-card" onclick="openModal('blanco.png', 'Soporte Vertical')">
                 <img src="blanco.png" alt="Soporte vertical">
@@ -317,7 +291,6 @@
 
     </div>
 
-    <!-- Ventana Modal optimizada -->
     <div id="imageModal" class="modal" onclick="closeModal()">
         <div class="modal-container" onclick="event.stopPropagation()">
             <span class="modal-close" onclick="closeModal()">&times;</span>
