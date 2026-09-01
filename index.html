@@ -11,30 +11,31 @@
         body {
             margin: 0;
             padding: 40px 20px;
-            /* Fondo base con patrón de cuadrícula industrial muy sutil estilo plano técnico */
-            background-color: #dfdbd2;
+            /* Fondo base con patrón de cuadrícula industrial sutil */
+            background-color: #d8d4cb;
             background-image: 
                 linear-gradient(to right, rgba(0, 0, 0, 0.04) 1px, transparent 1px),
                 linear-gradient(to bottom, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
             background-size: 30px 30px;
-            font-family: 'Segoe UI', Arial, sans-serif;
-            color: #2b353d;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            color: #212b32;
             display: flex;
             justify-content: center;
         }
         .flyer {
             width: 100%;
             max-width: 950px;
-            background-color: #e5e0d8;
+            background-color: #f3efe6;
             background-image: 
-                linear-gradient(to right, rgba(255, 255, 255, 0.15) 1px, transparent 1px),
-                linear-gradient(to bottom, rgba(255, 255, 255, 0.15) 1px, transparent 1px);
+                linear-gradient(to right, rgba(255, 255, 255, 0.3) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.3) 1px, transparent 1px);
             background-size: 30px 30px;
             padding: 45px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+            box-shadow: 0 20px 45px rgba(0,0,0,0.12), 0 5px 15px rgba(0,0,0,0.06);
+            border-radius: 6px;
             display: grid;
             grid-template-columns: 1fr 180px;
-            gap: 35px;
+            gap: 30px;
             align-items: start;
         }
 
@@ -48,56 +49,69 @@
             align-items: center;
         }
         .brand-logo-main {
-            height: 110px; /* Logo al doble de tamaño */
+            height: 110px;
             width: auto;
             object-fit: contain;
             display: block;
             margin-bottom: 12px;
             mix-blend-mode: multiply;
             cursor: pointer;
+            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.08));
+            transition: transform 0.25s ease;
+        }
+        .brand-logo-main:hover {
+            transform: scale(1.02);
         }
         .brand-subtitle {
-            font-size: 16px;
-            font-weight: 700;
-            color: #1c252c;
+            font-size: 15px;
+            font-weight: 800;
+            color: #172128;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin: 0 0 6px 0;
+            letter-spacing: 1.5px;
+            margin: 0 0 8px 0;
         }
         .contact-info-container {
             display: flex;
-            gap: 20px;
+            gap: 24px;
             justify-content: center;
             flex-wrap: wrap;
         }
         .contact-info {
             font-size: 13px;
-            color: #333;
-            font-weight: 500;
+            color: #4a5560;
+            font-weight: 600;
+            letter-spacing: 0.2px;
         }
 
-        /* Columna principal izquierda */
+        /* Columna principal izquierda con efecto de profundidad */
         .main-content {
             display: flex;
             flex-direction: column;
-            gap: 12px; /* Espaciado compacto entre secciones sin dejar vacíos */
+            gap: 14px;
         }
 
-        /* Estilo unificado para todas las secciones (Servicios, Materiales, Aplicaciones y Ventajas) */
+        /* Tarjetas de sección con profundidad y elevación sutil */
         .section-box {
-            background-color: #2c4d59; /* Mismo color unificado para todas las cajas */
+            background-color: #26434e;
             color: #ffffff;
-            padding: 16px 20px;
-            border-radius: 4px;
-            border: none;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+            padding: 18px 22px;
+            border-radius: 5px;
+            box-shadow: 0 6px 16px rgba(38, 67, 78, 0.2), 0 2px 4px rgba(0,0,0,0.08);
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+        .section-box:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 22px rgba(38, 67, 78, 0.28), 0 4px 8px rgba(0,0,0,0.1);
         }
         .section-box h2 {
-            font-size: 14px;
-            letter-spacing: 1px;
+            font-size: 13px;
+            letter-spacing: 1.5px;
+            font-weight: 800;
             color: #ffffff;
-            margin: 0 0 6px 0;
+            margin: 0 0 8px 0;
             text-transform: uppercase;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+            padding-bottom: 5px;
         }
         .section-box ul {
             list-style: none;
@@ -106,45 +120,52 @@
         }
         .section-box li {
             font-size: 13px;
-            color: #ffffff;
-            margin-bottom: 4px;
-            font-weight: 500;
-            letter-spacing: 0.3px;
+            color: #e2e8f0;
+            margin-bottom: 5px;
+            font-weight: 600;
+            letter-spacing: 0.4px;
+        }
+        .section-box li:last-child {
+            margin-bottom: 0;
         }
         .section-box li::before {
             content: "• ";
-            color: #ffffff;
-            font-weight: bold;
+            color: #72a4b8;
+            font-weight: 900;
         }
 
-        /* Columna derecha de imágenes en vertical con menor separación */
+        /* Columna derecha de imágenes con efecto tarjeta flotante */
         .images-sidebar {
             display: flex;
             flex-direction: column;
-            gap: 6px; /* Espaciado reducido entre las imágenes */
-            padding-top: 5px;
+            gap: 8px;
+            padding-top: 2px;
         }
         .img-card {
-            background: transparent;
-            border: none;
+            background: #ffffff;
+            border: 1px solid rgba(0, 0, 0, 0.06);
+            border-radius: 5px;
             text-align: center;
             cursor: pointer;
-            padding: 0;
-            transition: transform 0.2s ease;
+            padding: 8px 6px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
         }
         .img-card:hover {
-            transform: scale(1.03);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.12);
+            border-color: rgba(38, 67, 78, 0.3);
         }
         .images-sidebar img {
             width: 100%;
-            height: 115px;
+            height: 105px;
             object-fit: contain;
             display: block;
             mix-blend-mode: multiply;
-            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.1));
+            filter: drop-shadow(0 3px 6px rgba(0,0,0,0.08));
         }
 
-        /* Estilos del Modal adaptado para piezas oscuras y claras */
+        /* Estilos del Modal adaptado para contraste de piezas */
         .modal {
             display: none;
             position: fixed;
@@ -153,8 +174,8 @@
             top: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(220, 216, 208, 0.92);
-            backdrop-filter: blur(4px);
+            background-color: rgba(210, 205, 196, 0.92);
+            backdrop-filter: blur(5px);
             justify-content: center;
             align-items: center;
             padding: 20px;
@@ -162,11 +183,11 @@
         }
         .modal-container {
             position: relative;
-            background-color: #f4f1ea;
-            border: 1px solid #d2ccc0;
+            background-color: #fcfbfa;
+            border: 1px solid #c7beaf;
             border-radius: 8px;
-            padding: 30px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+            padding: 35px;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.18);
             max-width: 90%;
             max-height: 85vh;
             display: flex;
@@ -181,12 +202,12 @@
             mix-blend-mode: multiply; 
         }
         .modal-title {
-            margin-top: 15px;
+            margin-top: 16px;
             font-size: 14px;
-            font-weight: 700;
-            color: #2b353d;
+            font-weight: 800;
+            color: #1c252c;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 1.2px;
         }
         .modal-close {
             position: absolute;
@@ -212,7 +233,7 @@
                 display: grid;
                 grid-template-columns: repeat(3, 1fr);
                 gap: 10px;
-                margin-top: 25px;
+                margin-top: 20px;
             }
         }
     </style>
@@ -221,6 +242,7 @@
 
     <div class="flyer">
         
+        <!-- Cabecera general con el Logo centrado al doble de tamaño -->
         <div class="header">
             <img src="logo.png" alt="MUGONZA Logo" class="brand-logo-main" onclick="openModal('logo.png', 'Logo MUGONZA')" title="Ampliar logo">
             <div class="brand-subtitle">Soluciones Industriales en Impresión 3D</div>
@@ -230,7 +252,9 @@
             </div>
         </div>
 
+        <!-- Columna Izquierda: Secciones con profundidad -->
         <div class="main-content">
+            <!-- Servicios -->
             <div class="section-box">
                 <h2>Servicios</h2>
                 <ul>
@@ -240,6 +264,7 @@
                 </ul>
             </div>
 
+            <!-- Materiales -->
             <div class="section-box">
                 <h2>Materiales</h2>
                 <ul>
@@ -250,6 +275,7 @@
                 </ul>
             </div>
 
+            <!-- Aplicaciones -->
             <div class="section-box">
                 <h2>Aplicaciones</h2>
                 <ul>
@@ -258,6 +284,7 @@
                 </ul>
             </div>
 
+            <!-- Ventajas -->
             <div class="section-box">
                 <h2>Ventajas</h2>
                 <ul>
@@ -268,6 +295,7 @@
             </div>
         </div>
 
+        <!-- Columna Derecha: Imágenes con tarjetas flotantes -->
         <div class="images-sidebar">
             <div class="img-card" onclick="openModal('blanco.png', 'Soporte Vertical')">
                 <img src="blanco.png" alt="Soporte vertical">
@@ -291,6 +319,7 @@
 
     </div>
 
+    <!-- Ventana Modal optimizada -->
     <div id="imageModal" class="modal" onclick="closeModal()">
         <div class="modal-container" onclick="event.stopPropagation()">
             <span class="modal-close" onclick="closeModal()">&times;</span>
