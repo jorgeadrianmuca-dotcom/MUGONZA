@@ -14,4 +14,6 @@ Para publicar, reemplaza todos los archivos antiguos de la raíz y assets por lo
 
 V3: portada sin ilustración con texto centrado; sellado con imágenes 2x2 al lado derecho del texto y aviso bajo imágenes.
 
-V4: portada centrada, fotos sin nombres debajo y teléfono clicable +56 41 273 5499. Subir todos los archivos conservando carpetas.
+V5: portada centrada, fotos sin nombres debajo y teléfono clicable +56 41 273 5499. Subir todos los archivos conservando carpetas.
+
+V7: imagen tapa amarilla, pie con logo y teléfono, inicio superior en móvil salvo enlaces con #sección.
