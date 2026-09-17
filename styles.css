@@ -42,3 +42,6 @@
 .lightbox-close{position:absolute;right:16px;top:12px;width:48px;height:48px;border:1px solid #ffffff66;border-radius:50%;background:#20352f;color:white;font-size:34px;line-height:1;cursor:pointer}
 .lightbox-close:focus-visible{outline:3px solid #b8c9a9;outline-offset:3px}
 body.lightbox-open{overflow:hidden}
+
+/* V12: confirmación del formulario sin salir de la web */
+.quote-status{margin:8px 0 0;padding:12px 14px;border-radius:4px;background:#e8ede8;color:#22372c;font-size:13px;line-height:1.5}.quote-status.success{background:#e0f2e5;color:#215a37}.quote-status.error{background:#fff0eb;color:#8f3425}.quote-form button:disabled{opacity:.65;cursor:wait}
