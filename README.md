@@ -1,21 +1,9 @@
-# MuGonza — web corporativa V2
+# MuGonza web V11 — formulario directo
 
-Sube el contenido de esta carpeta (index.html, styles.css, script.js y carpeta assets) a la raíz del repositorio MUGONZA. No subas la carpeta contenedora como subdirectorio. En GitHub Pages utiliza main / (root).
+Sube el contenido de esta carpeta (index.html, styles.css, script.js y assets/) a la raíz de tu repositorio GitHub Pages.
 
-## Cambios
-- Logo original integrado en assets/logo.png.
-- Galería independiente eliminada: cuatro fotos de piezas en la sección de impresión 3D y cuatro imágenes de productos en sellado.
-- Composiciones divididas en archivos WebP individuales optimizados.
-- Textos recortados y navegación simplificada.
-- Sellos: imágenes generadas como referencia visual, NO fotografías del inventario ni certificación de especificaciones.
-- El formulario abre la app de correo: no envía datos por servidor ni adjunta archivos automáticamente.
+El formulario usa FormSubmit, un servicio externo que reenvía los datos enviados a ventas@mugonza.cl. No requiere que el visitante abra su correo.
 
-Para publicar, reemplaza todos los archivos antiguos de la raíz y assets por los de este paquete.
+**Activación indispensable:** después de publicar, realiza un primer envío de prueba con tus propios datos, revisa la bandeja de entrada y spam de ventas@mugonza.cl y haz clic en el enlace de activación de FormSubmit. Hasta confirmar ese correo, no consideres operativo el formulario. Haz luego un segundo envío de prueba y comprueba que llegó.
 
-V3: portada sin ilustración con texto centrado; sellado con imágenes 2x2 al lado derecho del texto y aviso bajo imágenes.
-
-V5: portada centrada, fotos sin nombres debajo y teléfono clicable +56 41 273 5499. Subir todos los archivos conservando carpetas.
-
-V7: imagen tapa amarilla, pie con logo y teléfono, inicio superior en móvil salvo enlaces con #sección.
-
-V8: corregido inicio en móvil incluso con #sellado y restauración tardía de Safari; navegación interna conservada.
+No se ha realizado ningún envío de prueba ni se ha activado el servicio durante la preparación de estos archivos. FormSubmit es un tercero que procesa los datos del formulario. Los adjuntos no se incluyen en este formulario.
